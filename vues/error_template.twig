@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Errors</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+body {
+	background-color: #C0C0C0;
+}
+</style>
+<div class="gold"</div>
+
+<body>
+	<div>
+		<table border="1"  style="width:1000px">
+			<tr>
+				<th>propriete</th>
+				<th>Valeur</th>
+			</tr>
+			<tr>
+				<td>Ligne</td>
+				<td>{{ error.getTemplateLine() }}</td>
+			</tr>
+			<tr>
+				<td>Fichier</td>
+				<td>{{ error.getTemplateFile() }}</td>
+			</tr>
+			<tr>
+				<td>Date</td>
+				<td>{{ "now"|date("m/d/Y") }}</td>
+			</tr>
+			<tr>
+
+				<td>message</td>
+				<td>{{ error.getRawMessage() }}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
+
+

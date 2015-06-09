@@ -1,0 +1,34 @@
+{
+  "name": "hoku/twig-wordpress",
+  "type": "library",
+  "description": "The Twig implementation for WordPress themes",
+  "keywords": ["wordpress", "twig", "templating"],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Jonas Blomdin",
+      "email": "jonas@hoku.am"
+    }
+  ],
+  "require": {
+    "php": ">=5.2.4",
+    "twig/twig": "1.18.0"
+  },
+  "autoload": {
+    "files": [
+             "classes/TWP_Loop_default.class.php",
+             "classes/TWP_Loop_Query_Post.class.php",
+             "classes/TWP_Loop_Query.class.php",
+             "classes/TWP_Exception.class.php",
+             "classes/TWP_Entree.class.php",
+             "classes/TWP_Liste_Entree.class.php",
+               "classes/wp-router/WP_Router_Utility.class.php",
+              "classes/wp-router/WP_Router.class.php",
+             "classes/wp-router/WP_Route.class.php",
+             "classes/wp-router/WP_Router_Page.class.php",
+             "classes/wp-router/WP_Router_Sample.class.php",
+           
+             "classes/wp-router/wp-router.php"
+                         ]
+  }
+}

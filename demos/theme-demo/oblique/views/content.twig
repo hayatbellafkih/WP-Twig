@@ -1,0 +1,52 @@
+{#
+/**
+ * @package Oblique
+ */
+#}
+
+<article id="post-{{ the_ID() }}" {{ post_class() }}>
+	<div class="svg-container post-svg svg-block">
+		{{ call('oblique_svg_3') }}
+	</div>	
+
+   	{% if ( has_post_thumbnail() ) %}
+		<div class="entry-thumb">
+			{{ the_post_thumbnail('oblique-entry-thumb') }}
+			<a class="thumb-link" href="{{ the_permalink() }}" title="{{ the_title() }}" ><i class="fa fa-link"></i></a>		
+		</div>	
+    {% endif %}	
+
+	{%  if ( has_post_thumbnail() ) %}
+	<div class="post-inner">
+    {% else %}
+	<div class="post-inner no-thumb">
+	{% endif %}
+		<header class="entry-header">
+		
+			{{ the_title( '<h1 class="entry-title"><a href="' ~ esc_url( get_permalink() )  ~ '" rel="bookmark"></a></h1>' ) }}
+
+		{% if ( 'post' == get_post_type() and not get_theme_mod('meta_index') ) %}
+			<div class="entry-meta">
+				{{ call('oblique_posted_on') }}
+			</div><!-- .entry-meta -->
+		{% endif %}
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		    {{ the_excerpt() }}
+
+			{{ wp_link_pages( {
+					'before' : '<div class="page-links">' ~ __( 'Pages:', 'oblique' ),
+					'after'  : '</div>',
+				 }) }}
+		</div><!-- .entry-content -->
+	</div>
+	{% if (not get_theme_mod('read_more')) %}
+	<div class="read-more">
+		<a href="{{ the_permalink() }}">{{ __('Continue reading &hellip;','oblique') }}></a>
+	</div>		
+   {% endif %}
+	<div class="svg-container post-bottom-svg svg-block">
+		{{ call('oblique_svg_1') }}
+	</div>	
+</article><!-- #post-## -->

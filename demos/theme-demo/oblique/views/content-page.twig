@@ -1,0 +1,29 @@
+{#
+/**
+ * The template used for displaying page content in page.php
+ *
+ * @package Oblique
+ */
+#}
+eeeeeeeee
+<div class="svg-container single-post-svg svg-block">
+	{{ call('oblique_svg_1') }}
+</div>
+<article id="{{ 'post-' ~ the_ID() }}" {{ post_class() }}>
+	<header class="entry-header">
+		{{ the_title( '<h1 class="entry-title">', '</h1>' ) }}
+	</header><!-- .entry-header -->
+	<div class="entry-content">
+		{{ the_content() }}
+		{{ wp_link_pages({'before' : '<div class="page-links">' . __( 'Pages:', 'oblique' ),
+				'after'  : '</div>',}) }}
+
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		{{ edit_post_link( __( 'Edit', 'oblique' ), '<span class="edit-link">', '</span>' ) }}
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+<div class="svg-container single-post-svg single-svg-bottom svg-block">
+{{ call('oblique_svg_3') }}
+</div>

@@ -1,0 +1,25 @@
+{# /**
+ * The template for displaying all single posts.
+ *
+ * @package Oblique
+ */ 
+ 
+ #}
+
+{{ get_header() }}
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+{% for post in loop %}
+			{{ get_template_part( 'content', 'single' ) }}
+
+		{{ the_post_navigation() }}
+{% if ( comments_open() or get_comments_number() ) %}
+{{ comments_template() }}
+{% endif %}
+{% endfor %}
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+{{ get_sidebar() }}
+{{ get_footer() }}

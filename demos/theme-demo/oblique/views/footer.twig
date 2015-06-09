@@ -1,0 +1,29 @@
+{# 
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the #content div and all content after
+ *
+ * @package Oblique
+ */
+#}
+
+		</div>
+	</div><!-- #content -->
+
+	<div class="svg-container footer-svg svg-block">
+	{{ call('oblique_svg_1') }}
+	</div>
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info container">
+			<a href="{{ esc_url( __( 'http://wordpress.org/', 'oblique' ) ) }}">{{ __( 'Proudly powered by WordPress', 'oblique' ) }}</a>
+			<span class="sep"> | </span>
+		{{  __( 'Theme: FlyFreeMedia by ', 'oblique' ) }}<a href="http://flyfreemedia.com/themes/oblique" rel="designer">Oblique</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+{{ wp_footer() }}
+
+</body>
+</html>

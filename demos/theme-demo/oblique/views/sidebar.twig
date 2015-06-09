@@ -1,0 +1,24 @@
+{#
+
+/**
+ * The sidebar containing the main widget area.
+ *
+ * @package Oblique
+ */
+#}
+
+<div id="secondary" class="widget-area" role="complementary">
+
+
+
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		{{ wp_nav_menu({ 'theme_location' : 'primary', 'menu_id' : 'primary-menu' }) }}
+	</nav><!-- #site-navigation -->
+	<nav class="sidebar-nav"></nav>
+
+
+{% if ( is_active_sidebar( 'sidebar-1' )) %}
+{{ dynamic_sidebar( 'sidebar-1' ) }}
+	{% endif%}
+
+</div><!-- #secondary -->

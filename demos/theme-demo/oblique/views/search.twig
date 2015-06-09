@@ -1,0 +1,42 @@
+{# 
+/**
+ * The template for displaying search results pages.
+ *
+ * @package Oblique
+ */
+#}
+{{ get_header() }}
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		{% if loop is not empty %}
+			<header class="page-header">
+				<h1 class="page-title">
+				{{ __('Search Results for: ' ~ get_search_query() ,'oblique') }}
+				</h1>
+			</header><!-- .page-header -->
+
+			{# Start the Loop  #}
+			{% for post in loop  %}
+				{#
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				#}
+				{{ 	get_template_part( 'content', 'search' ) }}
+			{% endfor %}
+
+           {{ the_posts_navigation() }}
+
+		{% else %}
+
+		   {{ get_template_part( 'content', 'none' ) }}
+
+		{% endif %}
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+{{ get_sidebar() }}
+{{ get_footer() }}

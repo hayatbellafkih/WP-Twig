@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Errors</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+body {
+	background-color: #B4AF91;
+}
+</style>
+<div class="gold"</div>
+
+<body>
+	<div>
+		<table border="4">
+			<tr>
+				<th>propriete</th>
+				<th>Valeur</th>
+			</tr>
+			<tr>
+				<td>Type d'erreur</td>
+				<td>{{ errors.type_erreur }}</td>
+			</tr>
+			<tr>
+				<td>Ligne</td>
+				<td>{{ errors.ligne }}</td>
+			</tr>
+			<tr>
+				<td>Fichier</td>
+				<td>{{ errors.fichier }}</td>
+			</tr>
+			<tr>
+				<td>Date</td>
+				<td>{{ errors.date }}</td>
+			</tr>
+			<tr>
+
+				<td>message</td>
+				<td>{{ errors.message }}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
+
+
